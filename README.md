@@ -1,10 +1,10 @@
 # SMPTE-LTC-DEOCDER
 SMPTE LTC DECODER / PC INTERFACE (ARDUINO)
 
-Decode analog LTC singal
-Shows TC, UB Data in 16x2 LCD
+Decode analog LTC singal<br>
+Shows TC, UB Data in 16x2 LCD<br>
 RS232 Interface with PC
 
-Two arduino used.
+Two arduinos are used.
   - Arduino UNO for LTC pulse detection
   - Arduino NANO for PC serial interface
