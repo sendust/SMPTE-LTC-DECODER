@@ -29,7 +29,7 @@
   2022/2/15 add drop frame, color frame flag (show on LCD)
   2022/2/16 New led feedback class
   2022/2/18 Improve heartbeat class, Add A5 pulse LOW state delay
-  
+  2022/3/25 Reorder userbit data
   
 */
 
@@ -243,17 +243,17 @@ void loop(){
   timeCode[11] = signal_flag.color[signal_flag.color_frame];
   timeCode[12] = signal_flag.drop[signal_flag.drop_frame];
   
-  userBits[0] = ((xtc[7] & 0xF0) >> 4) + '0';             // user bits 1 
-  userBits[1] = ((xtc[6] & 0xF0) >> 4) + '0';             // user bits 2  
+  userBits[0] = ((xtc[0] & 0xF0) >> 4) + '0';             // user bits 1 
+  userBits[1] = ((xtc[1] & 0xF0) >> 4) + '0';             // user bits 2  
   userBits[2] = '-';            
-  userBits[3] = ((xtc[5] & 0xF0) >> 4) + '0';             // user bits 3
-  userBits[4] = ((xtc[4] & 0xF0) >> 4) + '0';             // user bits 4
+  userBits[3] = ((xtc[2] & 0xF0) >> 4) + '0';             // user bits 3
+  userBits[4] = ((xtc[3] & 0xF0) >> 4) + '0';             // user bits 4
   userBits[5] = '-';            
-  userBits[6] = ((xtc[3] & 0xF0) >> 4) + '0';             // user bits 5
-  userBits[7] = ((xtc[2] & 0xF0) >> 4) + '0';             // user bits 6
+  userBits[6] = ((xtc[4] & 0xF0) >> 4) + '0';             // user bits 5
+  userBits[7] = ((xtc[5] & 0xF0) >> 4) + '0';             // user bits 6
   userBits[8] = '-';            
-  userBits[9] = ((xtc[1] & 0xF0) >> 4) + '0';             // user bits 7
-  userBits[10] = ((xtc[0] & 0xF0) >> 4) + '0';            // user bits 8
+  userBits[9] = ((xtc[6] & 0xF0) >> 4) + '0';             // user bits 7
+  userBits[10] = ((xtc[7] & 0xF0) >> 4) + '0';            // user bits 8
   
  
   tc_send[0] = (xtc[0] & 0x03);                    // 10's of hours
